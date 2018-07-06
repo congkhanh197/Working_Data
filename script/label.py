@@ -30,7 +30,6 @@ for file_xml in files_xml:
     file_name = os.path.basename(file_xml)
     in_file = open(xml_path+file_name)
     image_id, extension = os.path.splitext(file_name)
-    print(image_id)
     out_file = open('../done/labels/%s.txt'%(image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
@@ -51,16 +50,8 @@ for file_xml in files_xml:
         out_file.write(str(cls_id) + " " + " ".join([str(a) for a in bb]) + '\n')
 
 
-# for year, image_set in sets:
-#     if not os.path.exists('VOCdevkit/VOC%s/labels/'%(year)):
-#         os.makedirs('VOCdevkit/VOC%s/labels/'%(year))
-#     image_ids = open('VOCdevkit/VOC%s/ImageSets/Main/%s.txt'%(year, image_set)).read().strip().split()
-#     list_file = open('%s_%s.txt'%(year, image_set), 'w')
-#     for image_id in image_ids:
-#         list_file.write('%s/VOCdevkit/VOC%s/JPEGImages/%s.jpg\n'%(wd, year, image_id))
-#         convert_annotation(year, image_id)
-#     list_file.close()
-
-# os.system("cat 2007_train.txt 2007_val.txt 2012_train.txt 2012_val.txt > train.txt")
-# os.system("cat 2007_train.txt 2007_val.txt 2007_test.txt 2012_train.txt 2012_val.txt > train.all.txt")
-
+list_file = open('../config/train.txt', 'w')
+for image_id in range(1,2715):
+    list_file.write('/home/khanh/data_khanh/done/JPEGImages/'+'%06d'%image_id+'.jpg\n')
+list_file.close()
+os.system('cp ../config/train.txt ../config/test.txt')
