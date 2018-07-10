@@ -13,7 +13,7 @@ import cv2
 #         convert_annotation(data_set,image_id)
 
 
-xml_path = "../anno_picture/"
+xml_path = "../new/anno_picture/"
 files_xml = glob.glob(xml_path + "*.xml")
 
 path, dirs, files = next(os.walk ("../done/Annotations/"))
@@ -35,5 +35,5 @@ for file_xml in files_xml:
         y1 = int(xmlbox.find('ymax').text)
 	# x,y top left, x1,y1 bottom right
         cropped = img[y:y1,x:x1]
-        cv2.imwrite('../JPEG/'+"%06d"%image_id+".jpg",cropped)
+        cv2.imwrite('../new/JPEG/'+"%06d"%image_id+".jpg",cropped)
         image_id += 1

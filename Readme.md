@@ -23,3 +23,6 @@ Run script to take `.txt` label.
 cd script/
 python lable.py
 ```
+
+
+./darknet detector demo ~/data_khanh/config/obj.data ~/data_khanh/config/yolov3-tiny.cfg ~/data_khanh/backup/yolov3-tiny_10000.weights ~/data_khanh/test.mp4

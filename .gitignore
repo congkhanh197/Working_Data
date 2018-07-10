@@ -1,3 +1,8 @@
 *.jpg
 *.txt
 *.xml
+*.mp4
+*.png
+*.weights
+*.backup
+labelImg

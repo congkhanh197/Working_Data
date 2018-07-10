@@ -26,8 +26,8 @@ for file_xml in files_xml:
     #     break
     # image_id += 1
 
-for x in xrange(1, 2151):
+for x in range(1, 3458):
     st = "%06d" %x + ".xml"
     if st not in list_name:
-        print st
+        print(st)
         break
