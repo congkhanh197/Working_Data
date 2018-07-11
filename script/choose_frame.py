@@ -19,7 +19,8 @@ except OSError:
 
 from_frame = 0
 count_frame = 1 #default
-image_id = 1
+path, dirs, files = next(os.walk ("../new/picture/"))
+image_id = len(files) + 1
 
 while(True):
     ret, frame = cap.read()

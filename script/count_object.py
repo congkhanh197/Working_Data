@@ -21,7 +21,6 @@ orther = 0
 
 xml_path = "../done/Annotations/"
 files_xml = glob.glob(xml_path + "*.xml")
-image_id = 813
 count_file = 0
 for file_xml in files_xml:
     count_file += 1
