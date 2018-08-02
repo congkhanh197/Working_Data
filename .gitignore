@@ -2,7 +2,9 @@
 *.txt
 *.xml
 *.mp4
+*.avi
 *.png
 *.weights
 *.backup
 labelImg
+darknet

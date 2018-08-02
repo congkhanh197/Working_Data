@@ -23,7 +23,7 @@ def convert(size, box):
 
 xml_path = "../done/Annotations/"
 files_xml = glob.glob(xml_path + "*.xml")
-image_id = 813
+image_id = 0
 count_file = 0
 for file_xml in files_xml:
     count_file += 1
@@ -51,7 +51,9 @@ for file_xml in files_xml:
 
 
 list_file = open('../config/train.txt', 'w')
-for image_id in range(1,2715):
+path, dirs, files = next(os.walk ("../done/JPEGImages/"))
+num_image= len(files) + 1
+for image_id in range(1,num_image):
     list_file.write('/home/khanh/data_khanh/done/JPEGImages/'+'%06d'%image_id+'.jpg\n')
 list_file.close()
 os.system('cp ../config/train.txt ../config/test.txt')
