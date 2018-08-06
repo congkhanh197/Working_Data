@@ -1,0 +1,5 @@
+classes= 5
+train  = /home/nam/khanh/data/test_cv_catc/config/train.txt
+valid  = /home/nam/khanh/data/test_cv_catc/config/test.txt
+names  = /home/nam/khanh/data/test_cv_catc/config/obj.names
+backup = /home/nam/khanh/data/test_cv_catc/backup

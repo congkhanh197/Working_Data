@@ -1,5 +1,0 @@
-classes= 5
-train  = /home/khanh/data_khanh/config/train.txt
-valid  =/home/khanh/data_khanh/config/test.txt
-names = /home/khanh/data_khanh/config/obj.names
-backup = /home/khanh/data_khanh/backup

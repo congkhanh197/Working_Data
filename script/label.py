@@ -21,7 +21,7 @@ def convert(size, box):
     h = h*dh
     return (x,y,w,h)
 
-xml_path = "../done/Annotations/"
+xml_path = "../new/anno_picture/"
 files_xml = glob.glob(xml_path + "*.xml")
 image_id = 0
 count_file = 0
@@ -30,7 +30,7 @@ for file_xml in files_xml:
     file_name = os.path.basename(file_xml)
     in_file = open(xml_path+file_name)
     image_id, extension = os.path.splitext(file_name)
-    out_file = open('../done/labels/%s.txt'%(image_id), 'w')
+    out_file = open('../new/label/%s.txt'%(image_id), 'w')
     tree=ET.parse(in_file)
     root = tree.getroot()
     path = root.find('path').text
@@ -51,9 +51,9 @@ for file_xml in files_xml:
 
 
 list_file = open('../config/train.txt', 'w')
-path, dirs, files = next(os.walk ("../done/JPEGImages/"))
+path, dirs, files = next(os.walk ("../new/picture/"))
 num_image= len(files) + 1
 for image_id in range(1,num_image):
-    list_file.write('/home/khanh/data_khanh/done/JPEGImages/'+'%06d'%image_id+'.jpg\n')
+    list_file.write('/home/nam/khanh/new/picture/'+'%06d'%image_id+'.jpg\n')
 list_file.close()
 os.system('cp ../config/train.txt ../config/test.txt')
